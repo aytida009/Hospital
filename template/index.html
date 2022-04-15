@@ -1,0 +1,482 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Personal Doctor</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Favicons -->
+        <link href="{% static 'img/favicon.ico'%}" rel="icon">
+        <link href="{% static 'img/apple-touch-icon.png'%" rel="apple-touch-icon">
+
+        <!-- Google Fonts -->
+        <link href="{% static 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Nunito:600,700,800,900'%}" rel="stylesheet"> 
+
+        <!-- Bootstrap CSS File -->
+        <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+
+        <!-- Libraries CSS Files -->
+        <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css'%}" rel="stylesheet">
+        <link href="{% static 'vendor/animate/animate.min.css'%}" rel="stylesheet">
+        <link href="{% static 'vendor/ionicons/css/ionicons.min.css'%}" rel="stylesheet">
+        <link href="{% static 'vendor/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+
+        <!-- Main Stylesheet File -->
+        <link href="{% static 'css/hover-style.css'%}" rel="stylesheet">
+        <link href="{% static 'css/style.css'%}" rel="stylesheet">
+    </head>
+
+    <body>
+       
+        <main id="main">
+              <!-- Top Header Start -->
+        <section class="top-header">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1><a href="index">DR. KHUSHI AJMERA</a></h1>
+                        <!-- <a class="brand" href="index.html" title="Home"><img alt="Logo" src="img/logo.png"></a> -->
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <h2>Your Family Doctor</h2>
+                    <a class="btn btn-full" href="booking">Book an Appointment</a>
+                </div>
+            </div>
+        </section>
+        <!-- Top Header End -->
+
+            <!-- About Section Start-->
+            <section id="about">
+                <div class="container">
+                    
+                    <div class="row">
+                        <div class="col-lg-5 col-md-6">
+                            <div class="about-col-left">
+                                <img class="img-fluid" src="{% static 'img/Doctorpic.jpg'%}" />
+                            </div>
+                        </div>
+
+                        <div class="col-lg-7 col-md-6">
+                            <div class="about-col-right">
+                                <header class="section-header">
+                                    <h3>About Dr. KHUSHI</h3>
+                                </header>
+                                <ul class="icon">
+                                    <li><a href="#" class="fa fa-twitter"></a></li>
+                                    <li><a href="#" class="fa fa-facebook"></a></li>
+                                    <li><a href="#" class="fa fa-pinterest"></a></li>
+                                    <li><a href="#" class="fa fa-google-plus"></a></li>
+                                </ul>
+                                <p>
+                                    Dr. Khushi  Ajmera is a renowned General Physician in vijay Nagar , Ab Road , Indore. She has had many happy patients in her 12 years of journey as a General Physician . She studied and completed MBBS . You can visit her at Dr . Khushi Ajmera Clinic in vijay nagar , Ab Road , Indore. You can book an instant appointment online with Dr.Khushi Ajmera Lybrate.com.
+                                </p>
+                                <p>
+                                    Lybrate.com has an excellent community of General Physicians in India. You will find General Physicians with more than 12 years of experience on Lybrate.com. Find the best General Physicians online in Indore. View the profile of medical specialists and their reviews from other patients to make an informed decision.
+                                </p>
+                                <a href="about">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="about-col">
+                                <h4>Education</h4>
+                                <p> Degree - MBBS , BAMS
+                                <p>Medical College - Shri Aurobindo Institute of Medical Science  </p>
+                                <!-- <p>Residency in Family Medicine - University of Aurobindo  Health Science Center.</p> -->
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="about-col">
+                                <h4>Experience</h4>
+                                <p> Work Done in Aurobindo Hospital from before 10 year  </p>
+                                <p> Currently Work doing in Maharaja yashwantrao  Hospital already 7 year.</p>
+                            </div>
+                        </div>
+                    </div>
+                  
+                </div>
+            </section>
+            <!-- About Section End-->
+
+
+            <!-- Services Section Start -->
+            <section id="services">
+                <div class="container">
+                    <header class="section-header">
+                        <h3>Services</h3>
+                    </header>
+                    <div class="row">
+                         {% for s in services %}
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="single-service">
+                                <div class="icon icon-1"></div>
+                                
+                                <h4>{{s.tittle}}</h4>
+                                <span>{{s.price}}</span>
+                                <p>{{s.short_desc}}  </p>
+                                <a href="booking">Book Now</a>
+                            </div>
+                        </div>
+                        
+                        {%endfor%}
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="single-service">
+                                <div class="icon icon-2"></div>
+                                <h4>Health Checkup</h4>
+                                <!-- <span>30 Min | $30.00</span> -->
+                                <p>Regular health exams and tests can help find problems before they start.  </p>
+                                <a href="booking">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="single-service">
+                                <div class="icon icon-3"></div>
+                                <h4>Flu Shots</h4>
+                                <!-- <span>10 Min | $15.00</span> -->
+                                <p>Getting a flu shot will often protect you from coming down with the flu.</p>
+                                <a href="booking">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="single-service">
+                                <div class="icon icon-4"></div>
+                                <h4>Blood Test</h4>
+                                <!-- <span>30 Min | $10.00</span> -->
+                                <p>Regular blood testing is one of the most important ways to keep track of your overall physical well-being.</p>
+                                <a href="booking">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="single-service">
+                                <div class="icon icon-5"></div>
+                                <h4>Physical Exams</h4>
+                                <!-- <span>30 Min | $50.00</span> -->
+                                <p>A physical exam, or a physical, is a routine test wherein a healthcare professional inspects, feels, or listens to different parts a person's body.</p>
+                                <a href="booking">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="single-service">
+                                <div class="icon icon-6"></div>
+                                <h4>Prevention</h4>
+                                <!-- <span>10 Min | $20.00</span> -->
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                                <a href="booking">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="single-service">
+                                <div class="icon icon-7"></div>
+                                <h4>Family Planning</h4>
+                                <!-- <span>30 Min | $20.00</span> -->
+                                <p>In medicine, action taken to decrease the chance of getting a disease or condition.</p>
+                                <a href="booking">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="single-service">
+                                <div class="icon icon-8"></div>
+                                <h4>Home Visits</h4>
+                                <!-- <span>30 Min | $30.00</span> -->
+                                <p>Family planning is "the ability of individuals and couples to anticipate and attain their desired number of children and the spacing and timing of their births.</p>
+                                <a href="booking">Book Now</a>
+                            </div>
+                        </div>
+                        <!-- <div class="col-sm-6 col-md-4 col-lg-3 d-sm-none d-md-block d-lg-none">
+                            <div class="single-service">
+                                <div class="icon icon-9"></div>
+                                <h4>Insurance</h4>
+                                <span>10 Min | $100.00</span>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                                <a href="booking.html">Book Now</a>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </section>
+            <!-- Service Section End-->
+
+            <!-- Team Section Start -->
+            <section id="team">
+                <div class="container">
+                    <div class="section-header">
+                        <h3>Meet My Assistant</h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="box8">
+                                <img src="{% static 'img/team-1.jpg'%}" alt="">
+                                <div class="box-content">
+                                    <ul class="icon">
+                                        <li><a href="#" class="fa fa-twitter"></a></li>
+                                        <li><a href="#" class="fa fa-facebook"></a></li>
+                                        <li><a href="#" class="fa fa-pinterest"></a></li>
+                                        <li><a href="#" class="fa fa-google-plus"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h4>AKSHU SHARMA</h4>
+                            <span>Assistant Nurse</span>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing.
+                            </p>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="box8">
+                                <img src="{% static 'img/As2.jpg'%}" alt="">
+                                <div class="box-content">
+                                    <ul class="icon">
+                                        <li><a href="#" class="fa fa-twitter"></a></li>
+                                        <li><a href="#" class="fa fa-facebook"></a></li>
+                                        <li><a href="#" class="fa fa-pinterest"></a></li>
+                                        <li><a href="#" class="fa fa-google-plus"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h4>MANISHA CHOUHAN</h4>
+                            <span>Assistant Nurse</span>
+                            <p>
+                                Lorem ipsum dolor sit amet adipiscing elit. Proin consequat cursus sit amet elit proin consequat.
+                            </p>                     
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="box8">
+                                <img src="{% static 'img/As3.jpg'%}" alt="">
+                                <div class="box-content">
+                                    <ul class="icon">
+                                        <li><a href="#" class="fa fa-twitter"></a></li>
+                                        <li><a href="#" class="fa fa-facebook"></a></li>
+                                        <li><a href="#" class="fa fa-pinterest"></a></li>
+                                        <li><a href="#" class="fa fa-google-plus"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h4>AJEET NAYAK</h4>
+                            <span>Assistant Nurse</span>
+                            <p>
+                                Lorem ipsum dolor sit amet adipiscing elit. Proin consequat cursus sit amet elit proin consequat.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Team Section End -->
+            
+            <!-- Testimonials Section Start -->
+            <section id="testimonials" class="section-bg wow fadeInUp">
+                <div class="container">
+                    <div class="section-header">
+                        <h3>Happy Client</h3>
+                    </div>
+                    
+                    <div class="owl-carousel testimonials-carousel">
+                        <div class="row testimonial-item">
+                            <div class="col-sm-4">
+                                <div class="box8">
+                                    <img src="{% static 'img/testimonial-1.jpg'%}" class="testimonial-img" alt="">
+                                    <div class="box-content">
+                                        <ul class="icon">
+                                            <li><a href="#" class="fa fa-twitter"></a></li>
+                                            <li><a href="#" class="fa fa-facebook"></a></li>
+                                            <li><a href="#" class="fa fa-pinterest"></a></li>
+                                            <li><a href="#" class="fa fa-google-plus"></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="content">
+                                    <h3>Jamie D. Boyd</h3>
+                                    <h4>Oral Radiologist</h4>
+                                    <p>
+                                        <i class="fa fa-quote-left"></i>
+                                        Commodo sed hendrerit id, posuere tempus odio. Phasellus vel leo aliquam, interdum massa quis, aliquam sapien. Aliquam erat volutpat. Etiam nec feugiat libero. Phasellus in ipsum nunc.
+                                        <i class="fa fa-quote-right"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row testimonial-item">
+                            <div class="col-sm-4">
+                                <div class="box8">
+                                    <img src="{% static 'img/testimonial-2.jpg'%}" class="testimonial-img" alt="">
+                                    <div class="box-content">
+                                        <ul class="icon">
+                                            <li><a href="#" class="fa fa-twitter"></a></li>
+                                            <li><a href="#" class="fa fa-facebook"></a></li>
+                                            <li><a href="#" class="fa fa-pinterest"></a></li>
+                                            <li><a href="#" class="fa fa-google-plus"></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="content">
+                                    <h3>Albert J. Cerrato</h3>
+                                    <h4>Craft Artist</h4>
+                                    <p>
+                                        <i class="fa fa-quote-left"></i>
+                                        Proin ut dui dictum ligula condimentum cursus. Ut orci arcu, commodo sed hendrerit id, posuere tempus odio. Phasellus vel leo aliquam, interdum massa quis, aliquam sapien. Aliquam erat volutpat
+                                        <i class="fa fa-quote-right"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row testimonial-item">
+                            <div class="col-sm-4">
+                                <div class="box8">
+                                    <img src="{% static 'img/testimonial-3.jpg'%}" class="testimonial-img" alt="">
+                                    <div class="box-content">
+                                        <ul class="icon">
+                                            <li><a href="#" class="fa fa-twitter"></a></li>
+                                            <li><a href="#" class="fa fa-facebook"></a></li>
+                                            <li><a href="#" class="fa fa-pinterest"></a></li>
+                                            <li><a href="#" class="fa fa-google-plus"></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="content">
+                                    <h3>Theresa R. Wood</h3>
+                                    <h4>Prepress Technician</h4>
+                                    <p>
+                                        <i class="fa fa-quote-left"></i>
+                                        Dictum ligula condimentum cursus commodo sed hendrerit id, posuere tempus odio. Phasellus vel leo aliquam, interdum massa quis, aliquam sapien. Aliquam erat volutpat. Etiam nec ultricies semper risus.
+                                        <i class="fa fa-quote-right"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Testimonials Section End -->
+             <!-- Contact Section Start -->
+  <section id="contact" class="section-bg wow fadeInUp">
+    <div class="container">
+        <div class="section-header">
+            <h3>Contact Us-{{ name}}</h3>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="contact-detail">
+                    <div class="contact-hours">
+                        <h4>Opening Hours</h4>
+                        <p>Monday-Friday: 9am to 7pm</p>
+                        <p>Saturday: 9am to 4pm</p>
+                        <p>Sunday: Closed</p>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <h4>Contact Info</h4>
+                        <p>427,Vijay Nagar , plot no.7th ,Indore ,M.P</p>
+                        <p><a href="tel:+1-234-567-8900">+91 59276-59276</a></p>
+                        <p><a href="mailto:info@example.com">Familydoctor132@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="contact-form">
+                    <form action ="{% url 'contactpage'%}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <!-- <label> Your Name </label> -->
+                                <!-- <input type="text " name="message-name" size="18"><br><br> -->
+                                <input type="text"  name="name" class="form-control" placeholder="Name" required="required" />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <!-- <label> Your Email </label> -->
+                                <!-- <input type="email " name="message-email" size="18"><br><br> -->
+                                <input type="email"  name="email" class="form-control" placeholder="Email" required="required" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <!-- <label> Your Subject </label> -->
+                            <!-- <input type="text " name="message-subject" size="18"><br><br> -->
+                            <input type="text" name="subject" class="form-control" placeholder="Subject" required="required" />
+                        </div>
+                        <div class="form-group">
+                            <!-- <label> message </label>  -->
+                            <!-- <textarea  name="message" size="0"></textarea><br><br> -->
+                            <textarea  name="message" class="form-control" rows="5" placeholder="Message" required="required" ></textarea>
+                        </div>
+                        <div><button type="submit">Send Message</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- #contact end -->
+
+
+
+            <!-- Subscriber Section Start -->
+            <section id="subscriber">
+                <div class="container">
+                    <h3>Get Free Consultation</h3>
+                    <form class="form-inline" >
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email Goes Here">
+                        </div>
+                        <button type="submit" class="btn">Submit</button>
+                    </form>
+                </div>
+            </section>
+            <!-- Subscriber Section end -->
+            
+            <!-- Support Section Start -->
+            <section id="support">
+                <div class="container">
+                    <h1>
+                        Need help? Call me 24/7 at +91 59276-59276
+                    </h1>
+                </div>
+            </section>
+            <!-- Support Section end -->
+
+        </main>
+
+       
+
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        <!-- Uncomment below i you want to use a preloader -->
+        <!-- <div id="preloader"></div> -->
+
+        <!-- JavaScript Libraries -->
+        <script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
+        <script src="{% static 'vendor/jquery/jquery-migrate.min.js'%}"></script>
+        <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+        <script src="{% static 'vendor/easing/easing.min.js'%}"></script>
+        <script src="{% static 'vendor/stickyjs/sticky.js'%}"></script>
+        <script src="{% static 'vendor/superfish/hoverIntent.js'%}"></script>
+        <script src="{% static 'vendor/superfish/superfish.min.js'%}"></script>
+        <script src="{% static 'vendor/owlcarousel/owl.carousel.min.js'%}"></script>
+        <script src="{% static 'vendor/touchSwipe/jquery.touchSwipe.min.js'%}"></script>
+
+        <!-- Main Javascript File -->
+        <script src="{% static 'js/main.js'%}"></script>
+
+    </body>
+</html>
+{%endblock%}
+
