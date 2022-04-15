@@ -1,0 +1,211 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Dr. KHUSHI AJMERA</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Favicons -->
+        <link href="{% static 'img/favicon.ico'%}" rel="icon">
+        <link href="{% static 'img/apple-touch-icon.png'%}" rel="apple-touch-icon">
+
+        <!-- Google Fonts -->
+        <link href="{% static 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Nunito:600,700,800,900'%}" rel="stylesheet"> 
+
+        <!-- Bootstrap CSS File -->
+        <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+
+        <!-- Libraries CSS Files -->
+        <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css'%}" rel="stylesheet">
+        <link href="{% static 'vendor/animate/animate.min.css'%}" rel="stylesheet">
+        <link href="{% static 'vendor/ionicons/css/ionicons.min.css'%}" rel="stylesheet">
+        <link href="{% static 'vendor/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+
+        <!-- Main Stylesheet File -->
+        <link href="{% static 'css/hover-style.css'%}" rel="stylesheet">
+        <link href="{% static 'css/style.css'%}" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <main id="main">
+
+            <!-- Booking Section Start -->
+            <section id="booking">
+              
+                <div class="container">
+                   
+                    <div class="section-header">
+                        <h3>Book for Getting Appointment</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="booking-form">
+                                {% if user.is_authenticated %}
+                                <form action ="{% url 'Appointment' %}" method="POST">
+                                    {%csrf_token %}
+                                    <div class="form-row">
+                                        <div class="control-group col-sm-6">
+                                            <label>Full Name</label>
+                                            <input type="text" name="name" class="form-control" placeholder=" ---- ----" required="required" />
+                                        </div>
+                                        <div class="control-group col-sm-6">
+                                            <label>Email</label>
+                                            <input type="email"  name="email" class="form-control" placeholder="---- ----" required="required" />
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="control-group col-sm-6">
+                                            <label>Mobile</label>
+                                            <input type="tel" name="mobile" class="form-control" placeholder="---- ----" required="required" />
+                                        </div>
+                                        <div class="control-group col-sm-6">
+                                            <label>Select a Service</label>
+                                            <select  name="selectservice" class="custom-select">
+                                                <option value="consulation">Consultation</option>
+                                                <option value="Health Checkup">Health Checkup</option>
+                                                <option>Flu Shots</option>
+                                                <option>Blood Test</option>
+                                                <option>Physical Exams</option>
+                                                <option>Prevention</option>
+                                                <option>Family Planning</option>
+                                                <option>Home Visits</option>
+                                                <option>Insurance</option>  
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="control-group col-sm-6">
+                                            <label>Appointment Date</label>
+                                            <input type="date" name="appointmentdate" class="form-control datetimepicker-input" id="date" data-toggle="datetimepicker" data-target="#date" placeholder="YYYY/MM/DD" required="required" />
+                                        </div>
+                                        <div class="control-group col-sm-6">
+                                            <label>Appointment Time</label>
+                                            <input type="time" name="appointmenttime"class="form-control datetimepicker-input" id="time" data-toggle="datetimepicker" data-target="#time" placeholder=" HH:MM AM" required="required" />
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label>Special Request</label>
+                                        <input type="text" name="specialrequest"class="form-control" placeholder=" ---- ----" required="required" />
+                                    </div>
+                                   
+                                    <div class="button"><button type="submit">Book Now</button></div>
+                                    {%else%}
+                                    <div class="form-row">
+                                        <div class="control-group col-sm-6">
+                                            <label>Full Name</label>
+                                            <input type="text" name="name" class="form-control" placeholder=" ---- ----" required="required" />
+                                        </div>
+                                        <div class="control-group col-sm-6">
+                                            <label>Email</label>
+                                            <input type="email"  name="email" class="form-control" placeholder="---- ----" required="required" />
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="control-group col-sm-6">
+                                            <label>Mobile</label>
+                                            <input type="tel" name="mobile" class="form-control" placeholder="---- ----" required="required" />
+                                        </div>
+                                        <div class="control-group col-sm-6">
+                                            <label>Select a Service</label>
+                                            <select  name="selectservice" class="custom-select">
+                                                <option value="consulation">Consultation</option>
+                                                <option value="Health Checkup">Health Checkup</option>
+                                                <option>Flu Shots</option>
+                                                <option>Blood Test</option>
+                                                <option>Physical Exams</option>
+                                                <option>Prevention</option>
+                                                <option>Family Planning</option>
+                                                <option>Home Visits</option>
+                                                <option>Insurance</option>  
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="control-group col-sm-6">
+                                            <label>Appointment Date</label>
+                                            <input type="date" name="appointmentdate" class="form-control datetimepicker-input" id="date" data-toggle="datetimepicker" data-target="#date" placeholder="YYYY/MM/DD" required="required" />
+                                        </div>
+                                        <div class="control-group col-sm-6">
+                                            <label>Appointment Time</label>
+                                            <input type="time" name="appointmenttime"class="form-control datetimepicker-input" id="time" data-toggle="datetimepicker" data-target="#time" placeholder=" HH:MM AM" required="required" />
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label>Special Request</label>
+                                        <input type="text" name="specialrequest"class="form-control" placeholder=" ---- ----" required="required" />
+                                    </div>
+                                    <div class="button">
+                                        <a href="signup">
+                                        <button type="submit">Register</button>
+                                    </a>
+                                    </div>
+                                    
+                                    <!-- <li class="menu-has-children"><a href="signup">Register</a> </li>  -->
+                                  
+                                </form>
+                             {%endif%}
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </section>
+            <!-- Booking Section End -->
+            
+            <!-- Subscriber Section Start -->
+           <section id="subscriber">
+                <div class="container">
+                    <h3>Get Free Consultation</h3>
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email Goes Here">
+                        </div>
+                        <button type="submit" class="btn">Submit</button>
+                    </form>
+                </div>
+            </section>
+            <!-- Subscriber Section end -->
+            
+            <!-- Support Section Start -->
+            <section id="support" class="wow fadeInUp">
+                <div class="container">
+                    <h1>
+                        Need help? Call me 24/7 at +91 59276-59276
+                    </h1>
+                </div>
+            </section>
+            <!-- Support Section end -->
+
+        </main>
+
+
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        <!-- Uncomment below i you want to use a preloader -->
+        <!-- <div id="preloader"></div> -->
+
+               <!-- JavaScript Libraries -->
+               <script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
+               <script src="{% static 'vendor/jquery/jquery-migrate.min.js'%}"></script>
+               <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+               <script src="{% static 'vendor/easing/easing.min.js'%}"></script>
+               <script src="{% static 'vendor/stickyjs/sticky.js'%}"></script>
+               <script src="{% static 'vendor/superfish/hoverIntent.js'%}"></script>
+               <script src="{% static 'vendor/superfish/superfish.min.js'%}"></script>
+               <script src="{% static 'vendor/owlcarousel/owl.carousel.min.js'%}"></script>
+               <script src="{% static 'vendor/touchSwipe/jquery.touchSwipe.min.js'%}"></script>
+       
+               <!-- Main Javascript File -->
+               <script src="{% static 'js/main.js'%}"></script>
+       
+           </body>
+       </html>
+       
+{%endblock%}       

@@ -1,0 +1,88 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Personal Doctor</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Favicons -->
+        <link href="{% static 'img/favicon.ico'%}" rel="icon">
+        <link href="{% static 'img/apple-touch-icon.png'%" rel="apple-touch-icon">
+
+        <!-- Google Fonts -->
+        <link href="{% static 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Nunito:600,700,800,900'%}" rel="stylesheet"> 
+
+        <!-- Bootstrap CSS File -->
+        <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+
+        <!-- Libraries CSS Files -->
+        <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css'%}" rel="stylesheet">
+        <link href="{% static 'vendor/animate/animate.min.css'%}" rel="stylesheet">
+        <link href="{% static 'vendor/ionicons/css/ionicons.min.css'%}" rel="stylesheet">
+        <link href="{% static 'vendor/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+
+        <!-- Main Stylesheet File -->
+        <link href="{% static 'css/hover-style.css'%}" rel="stylesheet">
+        <link href="{% static 'css/style.css'%}" rel="stylesheet">
+    </head>
+
+    <body>
+      
+
+        <!-- Header Start -->
+        <header id="header">
+            <div class="container">
+                <nav id="nav-menu-container">
+                    <ul class="nav-menu">
+                        {% if user.is_authenticated %}
+                        <li><a href="index">Home</a></li>
+                        <li><a href="booking">Appointment</a></li>
+                        <li><a href="about">About</a></li>
+                        <li><a href="contact">Contact</a></li>
+                        <li><a href="service">Services</a></li>
+                        <li><a href="logout">Logout</a></li>
+                        <!-- <li class="menu-has-children"><a href="signup">Register</a> </li> -->
+                        {%else%}
+                        <li><a href="index">Home</a></li>
+                        <li><a href="booking">Appointment</a></li>
+                        <li><a href="about">About</a></li>
+                        <li><a href="contact">Contact</a></li>
+                        <li><a href="service">Services</a></li>
+                        <li class="menu-has-children"><a href="signup">Register</a> </li> 
+                        
+                        </ul>
+                    {%endif%}
+                </nav>
+            </div>
+        </header>
+        <!-- Header End -->
+
+        <!-- <main id="main"> -->
+
+           
+       
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        <!-- Uncomment below i you want to use a preloader -->
+        <!-- <div id="preloader"></div> -->
+
+        <!-- JavaScript Libraries -->
+        <script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
+        <script src="{% static 'vendor/jquery/jquery-migrate.min.js'%}"></script>
+        <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+        <script src="{% static 'vendor/easing/easing.min.js'%}"></script>
+        <script src="{% static 'vendor/stickyjs/sticky.js'%}"></script>
+        <script src="{% static 'vendor/superfish/hoverIntent.js'%}"></script>
+        <script src="{% static 'vendor/superfish/superfish.min.js'%}"></script>
+        <script src="{% static 'vendor/owlcarousel/owl.carousel.min.js'%}"></script>
+        <script src="{% static 'vendor/touchSwipe/jquery.touchSwipe.min.js'%}"></script>
+
+        <!-- Main Javascript File -->
+        <script src="{% static 'js/main.js'%}"></script>
+
+    </body>
+</html>
+{%block content%} 
+{%endblock%}

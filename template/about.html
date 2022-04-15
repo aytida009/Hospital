@@ -1,0 +1,143 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Dr. KHUSHI AJMERA</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Favicons -->
+        <link href="{% static 'img/favicon.ico'%}" rel="icon">
+        <link href="{% static 'img/apple-touch-icon.png'%}" rel="apple-touch-icon">
+
+        <!-- Google Fonts -->
+        <link href="{% static 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Nunito:600,700,800,900'%}" rel="stylesheet"> 
+
+        <!-- Bootstrap CSS File -->
+        <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+
+        <!-- Libraries CSS Files -->
+        <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css'%}" rel="stylesheet">
+        <link href="{% static 'vendor/animate/animate.min.css'%}" rel="stylesheet">
+        <link href="{% static 'vendor/ionicons/css/ionicons.min.css'%}" rel="stylesheet">
+        <link href="{% static 'vendor/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+
+        <!-- Main Stylesheet File -->
+        <link href="{% static 'css/hover-style.css'%}" rel="stylesheet">
+        <link href="{% static 'css/style.css'%}" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <main id="main">
+
+             <!-- About Section Start-->
+             <section id="about">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-6">
+                            <div class="about-col-left">
+                                <img class="img-fluid" src="{% static 'img/Doctorpic.jpg'%}" />
+                            </div>
+                        </div>
+
+                        <div class="col-lg-7 col-md-6">
+                            <div class="about-col-right">
+                                <header class="section-header">
+                                    <h3>Khushi Ajmera</h3>
+                                </header>
+                                <ul class="icon">
+                                    <li><a href="#" class="fa fa-twitter"></a></li>
+                                    <li><a href="#" class="fa fa-facebook"></a></li>
+                                    <li><a href="#" class="fa fa-pinterest"></a></li>
+                                    <li><a href="#" class="fa fa-google-plus"></a></li>
+                                </ul>
+                                <p>
+                                    Dr. Khushi  Ajmera is a renowned General Physician in vijay Nagar , Ab Road , Indore. She has had many happy patients in her 12 years of journey as a General Physician . She studied and completed MBBS . You can visit her at Dr . Khushi Ajmera Clinic in vijay nagar , Ab Road , Indore. You can book an instant appointment online with Dr.Khushi Ajmera Lybrate.com.
+                                </p>
+                                <p>
+                                    Lybrate.com has an excellent community of General Physicians in India. You will find General Physicians with more than 12 years of experience on Lybrate.com. Find the best General Physicians online in Indore. View the profile of medical specialists and their reviews from other patients to make an informed decision.
+                                </p>
+                               
+                                <a href="about">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="about-col">
+                                <h4>Education</h4>
+                               
+                                <p> Degree - MBBS , BAMS
+                                <p>Medical College - Shri Aurobindo Institute of Medical Science  </p>
+                                <!-- <p>Residency in Family Medicine - University of Aurobindo  Health Science Center.</p> -->
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="about-col">
+                                <h4>Experience</h4>
+                                
+                                <p> Work Done in Aurobindo Hospital from before 10 year  </p>
+                                <p> Currently Work doing in Maharaja yashwantrao  Hospital already 7 year.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About Section End-->
+            
+            <!-- Subscriber Section Start -->
+            <section id="subscriber">
+                <div class="container">
+                    <h3>Get Free Consultation</h3>
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email Goes Here">
+                        </div>
+                        <button type="submit" class="btn">Submit</button>
+                    </form>
+                </div>
+            </section>
+            <!-- Subscriber Section end -->
+            
+            
+            <!-- Support Section Start -->
+            <section id="support" class="wow fadeInUp">
+                <div class="container">
+                    <h1>
+                        Need help? Call me 24/7 at +91 59276-59276
+                    </h1>
+                </div>
+            </section>
+            <!-- Support Section end -->
+
+        </main>
+
+       
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        <!-- Uncomment below i you want to use a preloader -->
+        <!-- <div id="preloader"></div> -->
+
+               <!-- JavaScript Libraries -->
+               <script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
+               <script src="{% static 'vendor/jquery/jquery-migrate.min.js'%}"></script>
+               <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+               <script src="{% static 'vendor/easing/easing.min.js'%}"></script>
+               <script src="{% static 'vendor/stickyjs/sticky.js'%}"></script>
+               <script src="{% static 'vendor/superfish/hoverIntent.js'%}"></script>
+               <script src="{% static 'vendor/superfish/superfish.min.js'%}"></script>
+               <script src="{% static 'vendor/owlcarousel/owl.carousel.min.js'%}"></script>
+               <script src="{% static 'vendor/touchSwipe/jquery.touchSwipe.min.js'%}"></script>
+       
+               <!-- Main Javascript File -->
+               <script src="{% static 'js/main.js'%}"></script>
+       
+           </body>
+       </html>
+       
+{%endblock%}

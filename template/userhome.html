@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment confirmation</title>
+</head>
+<body>
+   <br><br>
+   <center>
+    <h3><b><u>APPOINTMENT CONFIRMATION</u></b></h3>
+    <strong>Your Name :</strong> {{ name }}<br/>
+    <strong>Your Email :</strong> {{ email }}<br/>
+    <strong>Your Mobile :</strong> {{ mobile }}<br/>
+    <strong>Your service :</strong> {{ selectservice}}<br/>
+   <strong> Your Appointment Date :</strong> {{ appointmentdate }}<br/>
+    <strong>Your Appointment Time :</strong> {{ appointmenttime }}<br/>
+    <strong>Your Request :</strong> {{ specialrequest }}<br/>
+    
+    <br/><br/>
+    <strong>Note:</strong>
+     This  appointment hasn't been set yet .We will contact you Shortly via telephone to confirm your appointment.<br>
+     <strong><b>Thank You!</b></strong>
+   </center> 
+</body>
+</html>
+{%endblock%}
